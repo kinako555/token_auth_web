@@ -17,6 +17,13 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       ## Rememberable
       t.datetime :remember_created_at
 
+      ## Trackable 追加
+      t.integer  :sign_in_count, :default => 0, :null => false
+      t.datetime :current_sign_in_at
+      t.datetime :last_sign_in_at
+      t.string   :current_sign_in_ip
+      t.string   :last_sign_in_ip
+
       # 確認メール
       ## Confirmable
       # t.string   :confirmation_token

@@ -8,7 +8,7 @@ default: &default
   adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  user: root
+  username: root
   password: pippo
   host: localhost
 
@@ -26,6 +26,6 @@ test:
 production:
   <<: *default
   database: fixture_management_production
-  user    : <%= ENV['USER'] %>
+  username    : <%= ENV['USER'] %>
   password: <%= ENV['SPASSWORD'] %>
 
